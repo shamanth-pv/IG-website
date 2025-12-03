@@ -8,15 +8,15 @@ function ServicesSection() {
   const services = [
     {
       title: "Installation & Training",
-      description: "Smooth installations and detailed user training for medical professionals."
+      description: "Pre-Installation, smooth installation process and detailed user training for medical professionals. Post-Installation care."
     },
     {
       title: "Technical Support",
-      description: "On-demand support for maintenance, troubleshooting, and calibration of critical care and radiology equipment."
+      description: "On-demand support for maintenance, troubleshooting, and calibration of critical care and application Support."
     },
     {
-      title: "AMC/CMC Management",
-      description: "Comprehensive Annual and Comprehensive Maintenance Contracts to ensure consistent performance."
+      title: "NABL/NABH Support",
+      description: "Comprehensive Annual and Comprehensive Maintenance. Calibration Certifications. NABL/NABH document support."
     }
   ];
 

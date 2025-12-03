@@ -29,7 +29,7 @@ function page() {
 
       {/* Other sections */}
       {/* <AboutUs /> */}
-      <SolutionsSection />
+      {/* <SolutionsSection /> */}
       <PartnersSection />
       <ServicesSection />
     </main>

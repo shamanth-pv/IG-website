@@ -34,32 +34,33 @@ function PartnersSection() {
   }, []);
 
   const associations = [
-    { name: "Acute Care", logo: logoPlaceholder },
-    { name: "Agappe", logo: logoPlaceholder },
-    { name: "Sensa Core", logo: logoPlaceholder },
-    { name: "Vet Care", logo: logoPlaceholder },
-    { name: "Peerless Biotech", logo: logoPlaceholder },
+    { name: "Acute Care", logo: "/1.webp" },
+    { name: "Agappe", logo: "/2.webp" },
+    { name: "Sensa Core", logo: "/3.webp" },
+    { name: "Vet Care", logo: "/4.webp" },
+    { name: "Peerless Biotech", logo: "/5.webp" },
   ];
 
   const clientele = [
-    { name: "Friendly Tails", logo: logoPlaceholder },
-    { name: "Kasturba Medical", logo: logoPlaceholder },
-    { name: "First Neuro", logo: logoPlaceholder },
-    { name: "Neuberg", logo: logoPlaceholder },
-    { name: "St. Johns", logo: logoPlaceholder },
-    { name: "The Pet Speciality", logo: logoPlaceholder },
-    { name: "MyPetz", logo: logoPlaceholder },
-    { name: "Manipal Hospitals", logo: logoPlaceholder },
-    { name: "Sakra World Hospital", logo: logoPlaceholder },
-    { name: "Bhagwan Mahaveer", logo: logoPlaceholder },
-    { name: "Father Muller", logo: logoPlaceholder },
+    { name: "Friendly Tails", logo: "/6.webp" },
+    { name: "Kasturba Medical", logo: "/7.webp" },
+    { name: "First Neuro", logo: "/8.webp" },
+    { name: "Neuberg", logo: "/9.webp" },
+    { name: "St. Johns", logo: "/10.webp" },
+    { name: "The Pet Speciality", logo: "/11.webp" },
+    { name: "MyPetz", logo: "/12.webp" },
+    { name: "Manipal Hospitals", logo: "/13.webp" },
+    { name: "Sakra World Hospital", logo: "/14.webp" },
+    { name: "Bhagwan Mahaveer", logo: "/15.webp" },
+    { name: "Father Muller", logo: "/16.webp" },
   ];
 
   return (
     <section 
       id="partners" 
       ref={sectionRef}
-      className="relative w-full py-24 bg-white overflow-hidden"
+      // UPDATED: Reduced padding from py-24 to py-12
+      className="relative w-full py-12 bg-white overflow-hidden"
     >
       
       <style dangerouslySetInnerHTML={{__html: `
@@ -116,16 +117,15 @@ function PartnersSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         
         {/* ASSOCIATIONS */}
-        <div className="mb-24">
+        {/* UPDATED: Reduced bottom margin from mb-24 to mb-12 */}
+        <div className="mb-12">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-12">
                 
                 <h2 className="text-4xl md:text-5xl font-bold text-[#1e88e5] shrink-0 w-full md:w-1/3 leading-none pb-1">
-                    {/* FIX: Added 'whitespace-nowrap' to force single line */}
                     <span className="relative inline-block whitespace-nowrap">
                         <span className="opacity-0 pointer-events-none" aria-hidden="true">
                             Our Associations&nbsp;
                         </span>
-                        {/* FIX: Changed h-full to h-[85%] and top-[7.5%] to reduce cursor height */}
                         <span className={`absolute top-[7.5%] left-0 h-[105%] w-0 ${isVisible ? 'type-associations' : ''}`}>
                             Our Associations
                         </span>
@@ -139,7 +139,8 @@ function PartnersSection() {
                     {associations.map((partner, index) => (
                         <div 
                             key={index}
-                            className="relative w-32 h-20 flex items-center justify-center transition-all duration-300 ease-out
+                            // UPDATED: Reduced height from h-96 to h-40
+                            className="relative w-40 h-48 flex items-center justify-center transition-all duration-300 ease-out
                                        hover:scale-110 hover:drop-shadow-xl hover:z-10"
                         >
                             <div className="relative w-full h-full">
@@ -153,7 +154,7 @@ function PartnersSection() {
                         </div>
                     ))}
                     
-                    <div className="relative w-32 h-36 hidden md:flex items-center justify-center opacity-40 pointer-events-none transition-all duration-300 ease-out
+                    <div className="relative w-40 h-48 hidden md:flex items-center justify-center opacity-40 pointer-events-none transition-all duration-300 ease-out
                                        hover:scale-110 hover:drop-shadow-xl hover:z-10">
                         <Image
                             src={HexagonPurple}
@@ -172,12 +173,10 @@ function PartnersSection() {
             <div className="flex flex-col md:flex-row items-start md:items-center gap-12">
                 
                 <h2 className="text-4xl md:text-5xl font-bold text-[#9a4593] shrink-0 w-full md:w-1/3 leading-none pb-1">
-                    {/* FIX: Added 'whitespace-nowrap' here too */}
                     <span className="relative inline-block whitespace-nowrap">
                         <span className="opacity-0 pointer-events-none" aria-hidden="true">
                             Key Clientele&nbsp;
                         </span>
-                        {/* FIX: Changed h-full to h-[85%] and top-[7.5%] to reduce cursor height */}
                         <span className={`absolute top-[7.5%] left-0 h-[105%] w-0 ${isVisible ? 'type-clientele' : ''}`}>
                             Key Clientele
                         </span>
@@ -191,7 +190,8 @@ function PartnersSection() {
                     {clientele.map((client, index) => (
                         <div 
                             key={index}
-                            className="relative w-28 h-16 flex items-center justify-center transition-all duration-300 ease-out
+                            // UPDATED: Reduced height from h-16 to h-40 to match Associations
+                            className="relative w-32 h-40 flex items-center justify-center transition-all duration-300 ease-out
                                        hover:scale-110 hover:drop-shadow-xl hover:z-10"
                         >
                             <div className="relative w-full h-full">
