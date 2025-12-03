@@ -132,7 +132,7 @@ function PartnersSection() {
                     </span>
                 </h2>
 
-                <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12 w-full pl-4 py-4
+                <div className="flex flex-wrap justify-center md:justify-start gap-1 md:gap-1 w-full pl-4 py-4
                                 [&:has(>div:hover)>div:not(:hover)]:opacity-50 
                                 [&:has(>div:hover)>div:not(:hover)]:scale-90 
                                 [&:has(>div:hover)>div:not(:hover)]:blur-[2px]">
@@ -183,7 +183,7 @@ function PartnersSection() {
                     </span>
                 </h2>
 
-                <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12 w-full pl-4 py-4
+                <div className="flex flex-wrap justify-center md:justify-start gap-1 md:gap-1 w-full pl-4 py-4
                                 [&:has(>div:hover)>div:not(:hover)]:opacity-50 
                                 [&:has(>div:hover)>div:not(:hover)]:scale-90 
                                 [&:has(>div:hover)>div:not(:hover)]:blur-[2px]">

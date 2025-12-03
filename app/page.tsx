@@ -19,7 +19,7 @@ function page() {
   return (
     <main>
       {/* 3. Pass the color down to Navbar */}
-      <Navbar slideColor={currentNavColor} />
+      <Navbar isHome={1}/>
       
       {/* 4. Pass the state control down to Slider */}
       <SwipeCard 

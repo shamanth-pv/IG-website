@@ -10,7 +10,7 @@ function page() {
         <Navbar textColor='text-white'/>
         <About />
         <Team />
-        <ContactSection />
+        {/* <ContactSection /> */}
     </>
   )
 }

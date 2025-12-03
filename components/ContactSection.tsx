@@ -1,10 +1,29 @@
-import React from 'react';
+"use client"
+import React, { useEffect, useRef, useState } from "react";
 import Medical from '@/src/assets/images/medical.png'
 // Placeholder background image (Doctor writing on clipboard)
 
 function ContactSection() {
+    const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+   useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.1 }
+      );
+      if (sectionRef.current) observer.observe(sectionRef.current);
+  
+      return () => observer.disconnect();
+    }, []);
+
   return (
-    <section id="contact" className="min-h-screen relative w-full py-24 flex items-center justify-center overflow-hidden">
+    <section id="contact" ref={sectionRef} className="min-h-screen relative w-full py-24 flex items-center justify-center overflow-hidden">
       
       {/* 1. BACKGROUND with Heavy White Overlay */}
       <div className="absolute inset-0 z-0">
@@ -20,7 +39,12 @@ function ContactSection() {
         
         {/* HEADER: "GET IN TOUCH" */}
         <div className="text-center mb-16">
-            <h3 className="text-xl md:text-2xl font-light tracking-widest text-gray-600 uppercase">
+            <h3 className={`text-xl md:text-2xl font-light tracking-widest text-gray-600 uppercase
+                transition-all duration-[1200ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
+                    ${visible
+                        ? "opacity-100 -translate-y-0 scale-100"
+                        : "opacity-0 -translate-y-12 scale-100"
+                        }`}>
                 Get in Touch
             </h3>
         </div>
@@ -29,13 +53,22 @@ function ContactSection() {
             
             {/* --- LEFT COLUMN: Brand Name --- */}
             <div className="text-center lg:text-left">
-                <h1 className="text-6xl md:text-7xl font-bold text-[#9a4593] tracking-tight">
+                <h1 className={`text-6xl md:text-7xl font-bold text-[#9a4593] tracking-tight transition-all duration-[1200ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
+                    ${visible
+                        ? "opacity-100 translate-y-0 scale-100"
+                        : "opacity-0 translate-y-12 scale-100"
+                        }`}>
                     Inspire Gene
                 </h1>
             </div>
 
             {/* --- RIGHT COLUMN: Contact Details --- */}
-            <div className="space-y-8 text-gray-700">
+            <div className={`space-y-8 text-gray-700 transition-all duration-[1200ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
+                    ${visible
+                        ? "opacity-100 translate-y-0 scale-100"
+                        : "opacity-0 translate-y-12 scale-100"
+                        }`}
+                        style={{ transitionDelay: `${250}ms` }}>
                 
                 {/* Row 1: Addresses */}
                 <div className="flex flex-col md:flex-row gap-6">

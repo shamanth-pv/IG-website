@@ -31,7 +31,7 @@ function PageBanner({ title, image }) {
       <div className="absolute inset-0 bg-[#2A1B3D]/70 mix-blend-multiply"></div>
       
       {/* 3. Text Content */}
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4 pt-10">
         
         <h1 
           className={`text-5xl md:text-7xl font-bold text-white tracking-widest uppercase drop-shadow-lg

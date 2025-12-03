@@ -106,7 +106,7 @@ function LeadershipSection() {
     <section 
       id="leadership" 
       ref={sectionRef} 
-      className="relative w-full min-h-90 py-24 overflow-hidden bg-[#4A4A4A] flex flex-col justify-center"
+      className="relative w-full min-h-screen py-24 overflow-hidden bg-[#4A4A4A] flex flex-col justify-center"
     >
       
       {/* NEW: Leadership Typing Text (Replaces Button) */}

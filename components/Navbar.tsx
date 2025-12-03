@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/src/assets/logo.svg";
 
-function Navbar({ textColor = "text-black" }) {
+function Navbar({ textColor = "text-black" , isHome = 0}) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Listen for scroll events
