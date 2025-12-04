@@ -118,10 +118,10 @@ const allProducts = [
     id: 1,
     category: "Pre-Analytics",
     name: "IG Artery",
-    description: "Multi-Channel Analyzer",
-    image: Products_png.Getein1160_png,
+    description: "Arterial Blood Gas Sampler",
+    image: Products_png.IG_Artery_png,
     isNew: true,
-    externalLink: '#',
+    externalLink: '/IGArteryBrochure.pdf',
   },
 ];
 

@@ -65,7 +65,7 @@ function Navbar({ textColor = "text-black" , isHome = 0}) {
               opacity-0 invisible 
               group-hover:opacity-100 group-hover:visible 
               transition-all duration-300 
-              transform translate-y-0 group-hover:translate-y-4 
+              transform -translate-y-2 group-hover:translate-y-0
               p-2
             "
           >
