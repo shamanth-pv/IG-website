@@ -111,7 +111,7 @@ function LeadershipSection() {
       
       {/* NEW: Leadership Typing Text (Replaces Button) */}
       <div className="relative pt-4 pb-10 z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
-          <h3 className="text-3xl md:text-4xl font-bold leading-tight text-gray-800 flex flex-col items-start gap-1">
+          <h3 className="font-spartan text-3xl md:text-4xl font-bold leading-tight text-gray-800 flex flex-col items-start gap-1">
               {/* LINE 1: Leadership That Powers */}
               <span className="relative inline-block">
                   {/* Ghost Text (Sets Width) */}
@@ -176,7 +176,7 @@ function LeadershipSection() {
                 >
                     
                     {/* The White Card */}
-                    <div className="bg-white rounded-[2rem] p-8 pt-24 text-center shadow-2xl transition-transform duration-300 hover:-translate-y-2 h-full flex flex-col">
+                    <div className="bg-white font-montserrat rounded-[2rem] p-8 pt-24 text-center shadow-2xl transition-transform duration-300 hover:-translate-y-2 h-full flex flex-col">
                         
                         {/* 3. POP-OUT IMAGE CONTAINER */}
                         <div className="absolute -top-16 left-1/2 -translate-x-1/2">

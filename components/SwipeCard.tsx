@@ -16,7 +16,8 @@ export const slides = [
   {
     id: 1,
     title: "Innovative Arterial Blood Gas Sampler",
-    linkText: "Learn more about IG Artery (IG Artery Product Page) <-TODO",
+    linkText: "Learn more about IG Artery",
+    link: "/products?category=Pre-Analytics",
     image: doctorImg,
     video: "/videos/Landing1.mp4", 
     navColor: "text-black" 
@@ -24,7 +25,8 @@ export const slides = [
   {
     id: 2,
     title: "Reliable Tools in POC That Strengthen Patient Care",
-    linkText: "Explore our POC solutions (POC product catalogue) <-TODO",
+    linkText: "Explore our POC solutions",
+    link: "/products?category=Point+of+Care",
     image: labImg, 
     video: "/videos/pulse.mp4",
     navColor: "text-black"
@@ -33,6 +35,7 @@ export const slides = [
     id: 3,
     title: "Trusted Diagnostics Meet Clinical Needs",
     linkText: "Explore our product range",
+    link: "/products",
     image: doctorImg, 
     navColor: "text-black"
   }
@@ -112,7 +115,7 @@ function SwipeCard({ current, setCurrent }) {
   }, [setCurrent]);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-white">
+    <div className="font-montserrat relative w-full h-screen overflow-hidden bg-white">
 
       {/* ------------------ SLIDES ------------------ */}
       {slides.map((slide, index) => {
@@ -164,7 +167,7 @@ function SwipeCard({ current, setCurrent }) {
                 />
 
                 <a
-                  href="#"
+                  href={slide.link}
                   className={`group inline-flex flex-col
                     transition-all duration-1000 ease-out delay-700
                     ${showContent ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"}`}

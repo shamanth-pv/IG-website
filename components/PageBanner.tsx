@@ -34,7 +34,7 @@ function PageBanner({ title, image }) {
       <div className="relative z-10 text-center px-4 pt-10">
         
         <h1 
-          className={`text-5xl md:text-7xl font-bold text-white tracking-widest uppercase drop-shadow-lg
+          className={`font-spartan text-5xl md:text-7xl font-bold text-white tracking-widest uppercase drop-shadow-lg
             transform transition-all duration-300 ease-out
             ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"}
           `}

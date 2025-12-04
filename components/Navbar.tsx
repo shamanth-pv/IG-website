@@ -20,7 +20,7 @@ function Navbar({ textColor = "text-black" , isHome = 0}) {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 backdrop-blur-lg border-b border-white/20 shadow-lg transition-all duration-300
+      className={`font-montserrat fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 backdrop-blur-lg border-b border-white/20 shadow-lg transition-all duration-300
         ${isScrolled ? "bg-white shadow-md py-2" : "bg-transparent"} ${finalColor}`}
     >
       {/* Logo */}

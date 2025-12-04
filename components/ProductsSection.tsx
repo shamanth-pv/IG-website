@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation'; // 1. Import hook
 import TODO from '@/src/assets/images/medical.png'
@@ -128,6 +128,10 @@ const allProducts = [
 const categories = ["Point of Care", "Speciality Diagnostics", "Pet Care", "Pre-Analytics"];
 
 function ProductsSection() {
+  //Open effect
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+  
   const searchParams = useSearchParams(); // 2. Get params
   const categoryParam = searchParams.get('category');
   
@@ -140,6 +144,21 @@ function ProductsSection() {
     }
   }, [categoryParam]);
 
+
+  useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.1 }
+      );
+      if (sectionRef.current) observer.observe(sectionRef.current);
+  
+      return () => observer.disconnect();
+  }, []);
   // Filter logic
   const filteredProducts = activeTab === "All" 
     ? allProducts 
@@ -147,10 +166,21 @@ function ProductsSection() {
 
   return (
     <section id="products-section" className="w-full py-16 bg-white min-h-screen pt-48">
+      <style jsx>{`
+        .parallax-card {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s;
+        }
+        .parallax-card.show {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        }
+        `}</style>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* 1. TABS NAVIGATION */}
-        <div className="flex flex-wrap items-center justify-center gap-8 mb-16 border-b border-gray-200 pb-1">
+        <div className="font-montserrat flex flex-wrap items-center justify-center gap-8 mb-16 border-b border-gray-200 pb-1">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -169,7 +199,14 @@ function ProductsSection() {
         </div>
 
         {/* 2. PRODUCTS GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div ref={sectionRef}
+        className={`font-montserrat grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 
+                        transition-all duration-[500ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
+                        ${visible
+                        ? "opacity-100 translate-y-0 scale-100"
+                        : "opacity-0 translate-y-10 scale-[1]"
+                        }`}>
+          
           {filteredProducts.map((product) => (
             <div 
               key={product.id}
@@ -228,7 +265,7 @@ function ProductsSection() {
 
         {/* Empty State */}
         {filteredProducts.length === 0 && (
-            <div className="text-center py-20 text-gray-400">
+            <div className="font-montserrat text-center py-20 text-gray-400">
                 <p>No products found in this category.</p>
             </div>
         )}

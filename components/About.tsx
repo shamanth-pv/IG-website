@@ -31,7 +31,7 @@ function About() {
         </div>
 
         <div className="relative">
-            <div className="space-y-8 text-xl text-justify leading-relaxed text-gray-600">
+            <div className="font-montserrat space-y-8 text-xl text-justify leading-relaxed text-gray-600">
                 <p>
                     Inspire Gene delivers high quality  <span className="font-semibold text-[#9a4593]">Point of Care diagnostics, specialty neuro markers, high quality QC solutions</span> and <span className="font-semibold text-[#9a4593]">medical devices</span> to hospitals, clinics, ICUs and veterinary care facilities. Our strong relationships with healthcare professionals help us understand real world needs and provide tailored, high value solutions that support better clinical outcomes.
                 </p>

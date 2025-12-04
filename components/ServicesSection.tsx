@@ -67,12 +67,12 @@ function ServicesSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
         {/* HEADER */}
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#206bc4] mb-4">
+          <h2 className="font-spartan text-4xl md:text-5xl font-bold text-[#206bc4] mb-4">
             OUR SERVICES
           </h2>
           <div className="h-1 w-24 bg-[#206bc4] mx-auto rounded-full mb-8"></div>
 
-                <p className="max-w-4xl mx-auto text-gray-600 text-lg leading-relaxed">
+                <p className="font-montserrat max-w-4xl mx-auto text-gray-600 text-lg leading-relaxed">
                     At Inspire Gene, service excellence isn’t just a goal, it’s embedded in our DNA. We are committed to delivering not only high-quality products but also unmatched support, ensuring that every interaction reflects our dedication to reliability, responsiveness, and the highest standards of care.
                 </p>
             </div>
@@ -94,13 +94,13 @@ function ServicesSection() {
                     `}
                     style={{ transitionDelay: `${500 + index * 250}ms` }}
                     >
-                            <h3 className="text-2xl font-bold text-[#1e3a8a] mb-4">
+                            <h3 className="font-spartan text-2xl font-bold text-[#1e3a8a] mb-4">
                             {service.title}
                         </h3>
                         {/* Divider Line inside card */}
                         <div className="h-0.5 w-16 bg-[#206bc4] mb-6 transition-all duration-300 group-hover:w-24"></div>
                         
-                        <p className="text-gray-700 font-medium leading-relaxed">
+                        <p className="font-montserrat text-gray-700 font-medium leading-relaxed">
                             {service.description}
                         </p>
                     </div>

@@ -60,7 +60,7 @@ function PartnersSection() {
       id="partners" 
       ref={sectionRef}
       // UPDATED: Reduced padding from py-24 to py-12
-      className="relative w-full py-12 bg-white overflow-hidden"
+      className="font-montserrat relative w-full py-12 bg-white overflow-hidden"
     >
       
       <style dangerouslySetInnerHTML={{__html: `

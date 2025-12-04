@@ -26,10 +26,6 @@ function page() {
         current={currentSlideIndex} 
         setCurrent={setCurrentSlideIndex} 
       />
-
-      {/* Other sections */}
-      {/* <AboutUs /> */}
-      {/* <SolutionsSection /> */}
       <PartnersSection />
       <ServicesSection />
     </main>

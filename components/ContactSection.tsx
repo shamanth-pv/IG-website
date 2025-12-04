@@ -39,7 +39,7 @@ function ContactSection() {
         
         {/* HEADER: "GET IN TOUCH" */}
         <div className="text-center mb-16">
-            <h3 className={`text-xl md:text-2xl font-light tracking-widest text-gray-600 uppercase
+            <h3 className={`font-spartan text-xl md:text-2xl font-light tracking-widest text-gray-600 uppercase
                 transition-all duration-[1200ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
                     ${visible
                         ? "opacity-100 -translate-y-0 scale-100"
@@ -52,7 +52,7 @@ function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-12 items-center">
             
             {/* --- LEFT COLUMN: Brand Name --- */}
-            <div className="text-center lg:text-left">
+            <div className="font-spartan text-center lg:text-left">
                 <h1 className={`text-6xl md:text-7xl font-bold text-[#9a4593] tracking-tight transition-all duration-[1200ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
                     ${visible
                         ? "opacity-100 translate-y-0 scale-100"
@@ -63,7 +63,7 @@ function ContactSection() {
             </div>
 
             {/* --- RIGHT COLUMN: Contact Details --- */}
-            <div className={`space-y-8 text-gray-700 transition-all duration-[1200ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
+            <div className={`font-montserrat space-y-8 text-gray-700 transition-all duration-[1200ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
                     ${visible
                         ? "opacity-100 translate-y-0 scale-100"
                         : "opacity-0 translate-y-12 scale-100"
