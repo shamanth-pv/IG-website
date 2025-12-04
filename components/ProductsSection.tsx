@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation'; // 1. Import hook
 import TODO from '@/src/assets/images/medical.png'
-
+import Products_png from '@/src/assets/assets/Products';
 // Placeholder Images (Replace with your actual product imports)
 const productImg = TODO;
 
@@ -11,57 +11,121 @@ const productImg = TODO;
 // DATA: Products List
 // ---------------------------------------------------------
 const allProducts = [
+  // Point of Care
   {
     id: 1,
     category: "Point of Care",
     name: "Pathfast",
     description: "Cardiac Biomarker Analyzer with CLEIA Technology",
-    image: productImg,
+    image: Products_png.Pathfast_png,
     isNew: false,
+    externalLink: 'https://www.agappe.com/in/pathfast-cardiac-biomarker-analyzer-with-cleia-technology.html',
   },
   {
     id: 2,
     category: "Point of Care",
     name: "Mispa Chem DX",
     description: "Auto Dry Biochemistry Analyzer",
-    image: productImg,
+    image: Products_png.MispaChemDX_png,
     isNew: false,
+    externalLink: 'https://www.agappe.com/in/dry-chemistry-analyzer-chemdx.html',
   },
   {
     id: 3,
     category: "Point of Care",
     name: "Mispa HBX",
     description: "Portable Hemoglobin Analyzer",
-    image: productImg,
+    image: Products_png.MispaHBX_png,
     isNew: false,
+    externalLink: 'https://www.agappe.com/in/mispa-hbx-hb-meter.html',
   },
   {
     id: 4,
-    category: "Specialty Diagnostics",
+    category: "Point of Care",
     name: "Mispa Revo",
     description: "Automated Cartridge Based Specific Protein Analyzer",
-    image: productImg,
-    isNew: true, // Shows "NEW" Ribbon
+    image: Products_png.MispaRevo_png,
+    isNew: false, // Shows "NEW" Ribbon
+    externalLink: 'https://www.agappe.com/in/mispa-revo-immunofluorescence-analyzer.html',
   },
   {
     id: 5,
-    category: "Pet Care",
+    category: "Point of Care",
     name: "Q-3 Plus",
     description: "Veterinary Immunoassay Analyzer",
-    image: productImg,
-    isNew: true,
+    image: Products_png.Q3Plus_png,
+    isNew: false,
+    externalLink: 'https://www.agappe.com/in/blood-coagulation-q3-plus.html',
   },
   {
     id: 6,
-    category: "Pre-Analytics",
+    category: "Point of Care",
     name: "Getein 1160",
     description: "Multi-Channel Analyzer",
-    image: productImg,
+    image: Products_png.Getein1160_png,
     isNew: false,
+    externalLink: 'https://www.getein.com/getein-1160-immunofluorescence-quantitative-analyzer-supplier\_p91.html',
+  },
+  // Speciality Diagnostics
+  {
+    id: 1,
+    category: "Speciality Diagnostics",
+    name: "Mispa i60",
+    description: "Chemiluminescent Enzyme Immunoassay Analyzer",
+    image: Products_png.Mispai60_png,
+    isNew: false,
+    externalLink: 'https://www.agappe.com/in/mispa-i60-chemiluminescence-enzyme-immunoassay-system.html',
+  },
+  {
+    id: 2,
+    category: "Speciality Diagnostics",
+    name: "Mispa i121",
+    description: "Chemiluminescent Enzyme Immunoassay Analyzer",
+    image: Products_png.Mispai121_png,
+    isNew: false,
+    externalLink: 'https://www.agappe.com/in/mispa-i121-fully-auto-chemiluminescence-enzyme-immunoassay-analyzer.html',
+  },
+  {
+    id: 3,
+    category: "Speciality Diagnostics",
+    name: "Seronorm",
+    description: "Immunoassay Lyo",
+    image: Products_png.Seronorm_png,
+    isNew: false,
+    externalLink: 'https://www.sero.no/products/seronorm-immunoassay-lyo',
+  },
+  // Pet Care
+  {
+    id: 1,
+    category: "Pet Care",
+    name: "Mispa Chem DX",
+    description: "Auto Dry Biochemistry Analyzer",
+    image: Products_png.MispaChemDX_png,
+    isNew: false,
+    externalLink: 'https://www.getein.com/getein-1160-immunofluorescence-quantitative-analyzer-supplier\_p91.html',
+  },
+  {
+    id: 2,
+    category: "Pet Care",
+    name: "Mispa VetX 50",
+    description: "Description",
+    image: Products_png.MispaVetX50_png,
+    isNew: false,
+    externalLink: '#',
+  },
+  // Pre-Analytics
+  {
+    id: 1,
+    category: "Pre-Analytics",
+    name: "IG Artery",
+    description: "Multi-Channel Analyzer",
+    image: Products_png.Getein1160_png,
+    isNew: true,
+    externalLink: '#',
   },
 ];
 
-const categories = ["Point of Care", "Specialty Diagnostics", "Pet Care", "Pre-Analytics"];
+const categories = ["Point of Care", "Speciality Diagnostics", "Pet Care", "Pre-Analytics"];
 
 function ProductsSection() {
   const searchParams = useSearchParams(); // 2. Get params
@@ -113,7 +177,7 @@ function ProductsSection() {
             >
               
               {/* --- IMAGE AREA --- */}
-              <div className="relative h-64 w-full p-8 flex items-center justify-center bg-white">
+              <div className="relative h-64 w-full p-4 flex items-center justify-center bg-white">
                 <div className="relative w-full h-full">
                     <Image 
                         src={product.image} 
@@ -143,7 +207,7 @@ function ProductsSection() {
                     {product.description}
                 </p>
                 <button className="bg-white text-[#9a4593] px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors shadow-lg translate-y-4 group-hover:translate-y-0 duration-300 delay-150">
-                    Learn More
+                    <a href={product.externalLink} target='_blank'>Learn More</a>
                 </button>
               </div>
 

@@ -74,7 +74,7 @@ function Navbar({ textColor = "text-black" , isHome = 0}) {
 
             <ul className="relative z-10 flex flex-col gap-1">
               <DropdownItem text="Point of Care" href="/products?category=Point+of+Care" />
-              <DropdownItem text="Specialty Diagnostics" href="/products?category=Specialty+Diagnostics" />
+              <DropdownItem text="Specialty Diagnostics" href="/products?category=Speciality+Diagnostics" />
               <DropdownItem text="Pet Care" href="/products?category=Pet+Care" />
               <DropdownItem text="Pre-Analytics" href="/products?category=Pre-Analytics" />
             </ul>
