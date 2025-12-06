@@ -45,7 +45,7 @@ export const slides = [
 // ---------------------------------------------------------
 // SLOW MOTION VIDEO
 // ---------------------------------------------------------
-const SlowMotionVideo = ({ src, isActive }) => {
+const SlowMotionVideo = ({ src }) => {
   const videoRef = useRef(null);
   const intervalRef = useRef(null);
 
@@ -53,41 +53,14 @@ const SlowMotionVideo = ({ src, isActive }) => {
     const video = videoRef.current;
     if (!video) return;
 
-    if (isActive) {
+    // if (isActive) {
       video.currentTime = 0;
       video.playbackRate = 1.0;
       video.play().catch((e) => console.log("Auto-play blocked:", e));
-
-      const checkTime = () => {
-        if (video.currentTime >= video.duration / 2) {
-          if (video.playbackRate >= 1.0) triggerBrake();
-        }
-      };
-
-      const triggerBrake = () => {
-        if (intervalRef.current) clearInterval(intervalRef.current);
-        intervalRef.current = setInterval(() => {
-          if (video.playbackRate > 0.1) video.playbackRate -= 0.1;
-          else {
-            video.pause();
-            clearInterval(intervalRef.current);
-          }
-        }, 50);
-      };
-
-      video.addEventListener('timeupdate', checkTime);
-
       return () => {
-        video.removeEventListener('timeupdate', checkTime);
         if (intervalRef.current) clearInterval(intervalRef.current);
       };
-    } else {
-      video.pause();
-      video.currentTime = 0;
-      video.playbackRate = 1.0;
-    }
   }, 
-  [isActive]
   );
 
   return (
@@ -132,17 +105,6 @@ function SwipeCard({ current, setCurrent }) {
 
             {/* RIGHT SIDE IMAGE/VIDEO */}
             <div className="absolute top-0 right-0 w-full h-full">
-              {slide.video ? (
-                <SlowMotionVideo src={slide.video} isActive={isActive} />
-              ) : (
-                <Image 
-                  src={slide.image}
-                  alt="Slide Background"
-                  fill
-                  className="object-cover object-center"
-                  priority={index === 0}
-                />
-              )}
               <SlowMotionVideo src={landingVideo} isActive={1} />
             </div>
 
