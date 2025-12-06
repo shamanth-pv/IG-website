@@ -1,11 +1,7 @@
 "use client";
-import AboutUs from '@/components/AboutUs'
-import ContactSection from '@/components/ContactSection';
-import LeadershipSection from '@/components/LeadershipSection';
 import Navbar from '@/components/Navbar'
 import PartnersSection from '@/components/PartnersSection';
 import ServicesSection from '@/components/ServicesSection';
-import SolutionsSection from '@/components/SolutionsSection';
 import SwipeCard, { slides } from '@/components/SwipeCard'
 import React, { useState } from 'react'
 

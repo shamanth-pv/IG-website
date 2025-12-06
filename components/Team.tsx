@@ -1,15 +1,11 @@
 "use client"; // Required for hooks
 import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import pulseImg from '@/src/assets/images/pulseImage.png'
+import pulseImg from '@/src/assets/images/pulseImage.jpeg'
 import LinkedIn from '@/src/assets/LinkedInlogo.svg'
-// --- IMAGE IMPORTS (Based on your snippet) ---
-// import doctorImg from '../src/assets/doctor-shows-interaction-patient-mechanism-blurred-background-222802318.webp';
 import profile1 from '@/src/assets/Profile Pictures/RanjithK.webp'
 import profile2 from '@/src/assets/Profile Pictures/SitharamanS.webp'
 import profile3 from '@/src/assets/Profile Pictures/SureshKumar.webp'
-// Placeholders
-// const waveDecorationImg = doctorImg;
 
 function LeadershipSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -66,7 +62,7 @@ function LeadershipSection() {
   return (
     <>
       
-      {/* 1. INJECTED STYLES FOR TYPING ANIMATION */}
+      {/* STYLES FOR TYPING ANIMATION */}
       <style jsx>{`
         @keyframes typing {
           from { width: 0 }
@@ -109,28 +105,21 @@ function LeadershipSection() {
       className="relative w-full min-h-screen py-24 overflow-hidden bg-[#4A4A4A] flex flex-col justify-center"
     >
       
-      {/* NEW: Leadership Typing Text (Replaces Button) */}
       <div className="relative pt-4 pb-10 z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
           <h3 className="font-spartan text-3xl md:text-4xl font-bold leading-tight text-gray-800 flex flex-col items-start gap-1">
-              {/* LINE 1: Leadership That Powers */}
               <span className="relative inline-block">
-                  {/* Ghost Text (Sets Width) */}
                   <span className="opacity-0 pointer-events-none" aria-hidden="true">
                       Leadership That Powers&nbsp;
                   </span>
-                  {/* Animated Text */}
                   <span className={`absolute text-gray-200 top-0 left-0 h-full w-0 overflow-hidden whitespace-nowrap ${isVisible ? 'type-line-1' : ''}`}>
                       Leadership That Powers
                   </span>
               </span>
               
-              {/* LINE 2: Innovation and Care (Gradient) */}
               <span className="relative inline-block">
-                  {/* Ghost Text */}
                   <span className="opacity-0 pointer-events-none" aria-hidden="true">
                       Innovation and Care.
                   </span>
-                  {/* Animated Text */}
                   <span className={`absolute top-0 left-0 h-full w-0 overflow-hidden whitespace-nowrap ${isVisible ? 'type-line-2' : ''}`}>
                       <span className="bg-gradient-to-t from-[#9a4593]/40 via-[#9a4593] to-[#9a4593] bg-clip-text text-transparent">
                           Innovation and Care.
@@ -141,19 +130,7 @@ function LeadershipSection() {
           </h3>
       </div>
       
-      {/* 1. HEARTBEAT LINE DECORATION (Top Right) */}
-      {/* <div className="absolute top-10 right-0 left-0 h-32 pointer-events-none opacity-40">
-        <svg viewBox="0 0 1440 120" fill="none" className="w-full h-full text-red-600">
-           <path 
-             d="M0 60 H800 L820 10 L840 110 L860 30 L880 90 L900 60 H1440" 
-             stroke="currentColor" 
-             strokeWidth="2"
-             vectorEffect="non-scaling-stroke"
-           />
-        </svg>
-      </div> */}
 
-      {/* 2. BACKGROUND WAVE IMAGE (Bottom Left) */}
       <div className="absolute bottom-0 left-0 w-full h-full opacity-10 pointer-events-none">
           <Image 
             src={pulseImg} 
@@ -163,6 +140,7 @@ function LeadershipSection() {
           />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
+        
         {/* CARDS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
             {team.map((member, index) => (
@@ -171,14 +149,13 @@ function LeadershipSection() {
                   className={`relative group transition-all duration-1000 ease-out
                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}
                   `}
-                  // Stagger delay: Index * 200ms (0ms, 200ms, 400ms)
                   style={{ transitionDelay: `${index * 200}ms` }} 
                 >
                     
                     {/* The White Card */}
                     <div className="bg-white font-montserrat rounded-[2rem] p-8 pt-24 text-center shadow-2xl transition-transform duration-300 hover:-translate-y-2 h-full flex flex-col">
                         
-                        {/* 3. POP-OUT IMAGE CONTAINER */}
+                        {/* Pop-out Image Container */}
                         <div className="absolute -top-16 left-1/2 -translate-x-1/2">
                             <div className="relative w-32 h-32 rounded-full border-7 border-white shadow-lg overflow-hidden bg-gray-200">
                                 <Image 
@@ -205,15 +182,11 @@ function LeadershipSection() {
                         {/* LinkedIn Icon */}
                         <a href={member.linkedin} target="_blank" className="flex justify-center text-[#0077b5] hover:scale-105 transition-transform mt-auto">
                              <Image src={LinkedIn} alt='LinkedIn icon' className='w-8 h-8'/>
-                             {/* <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                             </svg> */}
                         </a>
                     </div>
                 </div>
             ))}
         </div>
-
       </div>
     </section>
     </>

@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 // import doctorImg from '../src/assets/doctor-shows-interaction-patient-mechanism-blurred-background-222802318.webp';
 import PageBanner from './PageBanner';
@@ -11,11 +11,28 @@ import AboutBody from '../src/assets/BG Images/AboutUsBody.webp'
 
 function About() {
   const purpleColor = "#9a4593"; 
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+   useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.1 }
+      );
+      if (sectionRef.current) observer.observe(sectionRef.current);
+  
+      return () => observer.disconnect();
+    }, []);
 
   return (
     <>
     <PageBanner title="ABOUT US" image={AboutHeader} />
-    <section id="about" className="w-full bg-white overflow-hidden relative flex flex-col md:flex-row py-12 md:py-24">
+    <section ref={sectionRef} id="about" className="w-full bg-white overflow-hidden relative flex flex-col md:flex-row py-12 md:py-24">
       {/* --- LEFT COLUMN: Text Content --- */}
       <div className="w-full md:w-1/2 flex flex-col justify-start px-8 md:px-16 lg:px-24 relative z-10 order-2 md:order-1">
         
@@ -30,7 +47,12 @@ function About() {
             </svg>
         </div>
 
-        <div className="relative">
+        <div className={`relative 
+                    transition-all duration-[300ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
+                    ${visible
+                        ? "opacity-100 translate-y-0 scale-100"
+                        : "opacity-0 translate-y-12 scale-100"
+                        }`}>
             <div className="font-montserrat space-y-8 text-xl text-justify leading-relaxed text-gray-600">
                 <p>
                     Inspire Gene delivers high quality  <span className="font-semibold text-[#9a4593]">Point of Care diagnostics, specialty neuro markers, high quality QC solutions</span> and <span className="font-semibold text-[#9a4593]">medical devices</span> to hospitals, clinics, ICUs and veterinary care facilities. Our strong relationships with healthcare professionals help us understand real world needs and provide tailored, high value solutions that support better clinical outcomes.
@@ -43,7 +65,13 @@ function About() {
       </div>
 
       {/* --- RIGHT COLUMN: Image --- */}
-      <div className="w-full md:w-1/2 relative flex items-center justify-end order-1 md:order-2 pb-10 md:pb-0">
+      <div className={`w-full md:w-1/2 relative flex items-center justify-end order-1 md:order-2 pb-10 md:pb-0
+                    transition-all duration-[300ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
+                    ${visible
+                        ? "opacity-100 translate-y-0 scale-100"
+                        : "opacity-0 translate-y-12 scale-100"
+                        }`}
+                        style={{ transitionDelay: `${120}ms` }}>
         
         {/* The Image Container */}
         <div className="relative w-full h-[400px] md:h-[400px] md:w-[90%] z-20">

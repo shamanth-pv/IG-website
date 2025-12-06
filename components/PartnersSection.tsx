@@ -5,14 +5,10 @@ import TODO from '@/src/assets/images/medical.png'
 import HexagonPurple from '@/src/assets/Design Elements/HexPurple.svg'
 import HexagonBlue from '@/src/assets/Design Elements/HexBlue.svg'
 
-// Placeholder Logo URL
-const logoPlaceholder = TODO;
-
 function PartnersSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // --- INTERSECTION OBSERVER ---
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -59,7 +55,6 @@ function PartnersSection() {
     <section 
       id="partners" 
       ref={sectionRef}
-      // UPDATED: Reduced padding from py-24 to py-12
       className="font-montserrat relative w-full py-12 bg-white overflow-hidden"
     >
       
@@ -104,7 +99,7 @@ function PartnersSection() {
         }
       `}} />
 
-      {/* Background Decorative Rings */}
+      {/* Background Circles */}
       <div className="absolute top-20 -left-20 w-80 h-80 opacity-20 pointer-events-none">
         <svg viewBox="0 0 100 100" fill="none" stroke="#FF6B6B" strokeWidth="0.5">
             <circle cx="50" cy="50" r="40" />
@@ -117,7 +112,6 @@ function PartnersSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         
         {/* ASSOCIATIONS */}
-        {/* UPDATED: Reduced bottom margin from mb-24 to mb-12 */}
         <div className="mb-12">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-12">
                 
@@ -190,7 +184,6 @@ function PartnersSection() {
                     {clientele.map((client, index) => (
                         <div 
                             key={index}
-                            // UPDATED: Reduced height from h-16 to h-40 to match Associations
                             className="relative w-32 h-40 flex items-center justify-center transition-all duration-300 ease-out
                                        hover:scale-110 hover:drop-shadow-xl hover:z-10"
                         >

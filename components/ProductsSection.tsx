@@ -1,15 +1,9 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation'; // 1. Import hook
-import TODO from '@/src/assets/images/medical.png'
+import { useSearchParams } from 'next/navigation';
 import Products_png from '@/src/assets/Products';
-// Placeholder Images (Replace with your actual product imports)
-const productImg = TODO;
 
-// ---------------------------------------------------------
-// DATA: Products List
-// ---------------------------------------------------------
 const allProducts = [
   // Point of Care
   {
@@ -128,7 +122,7 @@ const allProducts = [
 const categories = ["Point of Care", "Speciality Diagnostics", "Pet Care", "Pre-Analytics"];
 
 function ProductsSection() {
-  //Open effect
+  // Entry effect
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
   
@@ -137,7 +131,7 @@ function ProductsSection() {
   
   const [activeTab, setActiveTab] = useState("Point of Care");
 
-  // 3. Effect to switch tab when URL changes
+  // Effect to switch tab when URL changes
   useEffect(() => {
     if (categoryParam && categories.includes(categoryParam)) {
       setActiveTab(categoryParam);
@@ -179,7 +173,7 @@ function ProductsSection() {
         `}</style>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* 1. TABS NAVIGATION */}
+        {/* TABS NAVIGATION */}
         <div className="font-montserrat flex flex-wrap items-center justify-center gap-8 mb-16 border-b border-gray-200 pb-1">
           {categories.map((cat) => (
             <button
@@ -198,7 +192,7 @@ function ProductsSection() {
           ))}
         </div>
 
-        {/* 2. PRODUCTS GRID */}
+        {/* PRODUCTS GRID */}
         <div ref={sectionRef}
         className={`font-montserrat grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 
                         transition-all duration-[500ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
@@ -213,7 +207,7 @@ function ProductsSection() {
               className="group relative bg-white rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl"
             >
               
-              {/* --- IMAGE AREA --- */}
+              {/* IMAGE AREA */}
               <div className="relative h-64 w-full p-4 flex items-center justify-center bg-white">
                 <div className="relative w-full h-full">
                     <Image 
@@ -225,7 +219,7 @@ function ProductsSection() {
                 </div>
               </div>
 
-              {/* --- TEXT CONTENT (Normal State) --- */}
+              {/* TEXT CONTENT (Normal State) */}
               <div className="p-6 text-center">
                 <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-[#9a4593] transition-colors">
                     {product.name}
@@ -235,7 +229,7 @@ function ProductsSection() {
                 </p>
               </div>
 
-              {/* --- OVERLAY (Hover State) --- */}
+              {/* Hover State */}
               <div className="absolute inset-0 bg-[#9a4593]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6 text-center">
                 <h3 className="text-2xl font-bold mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                     {product.name}
@@ -248,13 +242,13 @@ function ProductsSection() {
                 </button>
               </div>
 
-              {/* --- "NEW" RIBBON --- */}
+              {/* "NEW" RIBBON */}
               {product.isNew && (
                 <div className="absolute top-0 left-0">
                    <div className="bg-red-500 text-white text-[10px] font-bold px-3 py-1 shadow-md z-20 relative">
                       NEW
                    </div>
-                   {/* Little triangle for ribbon effect */}
+                   {/* Triangle for ribbon effect */}
                    <div className="absolute top-0 right-[-6px] w-0 h-0 border-t-[6px] border-t-red-700 border-r-[6px] border-r-transparent"></div>
                 </div>
               )}

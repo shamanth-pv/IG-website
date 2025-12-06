@@ -4,16 +4,10 @@ import Image from 'next/image';
 import Hexagon from '@/src/assets/Design Elements/HexPurple.svg'
 import Landing1 from '@/src/assets/BG Images/Landing2.webp'
 import Landing3 from '@/src/assets/BG Images/Landing3.webp'
-// ---------------------------------------------------------
-// 1. IMAGE IMPORTS
-// ---------------------------------------------------------
-import doctorImg from '@/src/assets/images/pulseImage.png';
+import doctorImg from '@/src/assets/images/pulseImage.jpeg';
 const labImg = doctorImg;
 const landingVideo = "/videos/Landing1.mp4"
-// ---------------------------------------------------------
-// 2. SLIDE DATA
-// ---------------------------------------------------------
-// Image or different image and video in different cards <- Not used
+
 export const slides = [
   {
     id: 1,
@@ -42,9 +36,6 @@ export const slides = [
   }
 ];
 
-// ---------------------------------------------------------
-// SLOW MOTION VIDEO
-// ---------------------------------------------------------
 const SlowMotionVideo = ({ src }) => {
   const videoRef = useRef(null);
   const intervalRef = useRef(null);
@@ -74,9 +65,7 @@ const SlowMotionVideo = ({ src }) => {
   );
 };
 
-// ---------------------------------------------------------
-// 3. COMPONENT
-// ---------------------------------------------------------
+// Main component
 function SwipeCard({ current, setCurrent }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -91,7 +80,6 @@ function SwipeCard({ current, setCurrent }) {
   return (
     <div className="font-montserrat relative w-full h-screen overflow-hidden bg-white">
 
-      {/* ------------------ SLIDES ------------------ */}
       {slides.map((slide, index) => {
         const isActive = index === current;
         const showContent = isActive && mounted;
@@ -105,7 +93,7 @@ function SwipeCard({ current, setCurrent }) {
 
             {/* RIGHT SIDE IMAGE/VIDEO */}
             <div className="absolute top-0 right-0 w-full h-full">
-              <SlowMotionVideo src={landingVideo} isActive={1} />
+              <SlowMotionVideo src={landingVideo} />
             </div>
 
             {/* GRADIENT */}
@@ -147,7 +135,7 @@ function SwipeCard({ current, setCurrent }) {
         );
       })}
 
-      {/* ------------------ BOTTOM DOTS ------------------ */}
+      {/* BOTTOM DOTS */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
         {slides.map((_, idx) => (
           <button
@@ -160,7 +148,7 @@ function SwipeCard({ current, setCurrent }) {
         ))}
       </div>
 
-      {/* ------------------ DECORATION ------------------ */}
+      {/* DECORATION */}
       <div className="absolute bottom-10 left-10 z-20 opacity-60 pointer-events-none">
         <Image
           src={Hexagon}

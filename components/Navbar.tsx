@@ -69,7 +69,7 @@ function Navbar({ textColor = "text-black" , isHome = 0}) {
               p-2
             "
           >
-            {/* Little arrow */}
+            {/* Arrow */}
             <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t border-l border-gray-100 rotate-45"></div>
 
             <ul className="relative z-10 flex flex-col gap-1">

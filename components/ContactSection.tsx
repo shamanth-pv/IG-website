@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react";
-import Medical from '@/src/assets/BG Images/AboutUsBody.webp'
-// Placeholder background image (Doctor writing on clipboard)
+import Medical from '@/src/assets/BG Images/Contact.webp'
 
 function ContactSection() {
     const sectionRef = useRef(null);
@@ -25,22 +24,19 @@ function ContactSection() {
   return (
     <section id="contact" ref={sectionRef} className="min-h-screen relative w-full py-24 flex items-center justify-center overflow-hidden">
       
-      {/* 1. BACKGROUND with Heavy White Overlay */}
       <div className="absolute inset-0 z-0">
          <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat grayscale opacity-100"
             style={{ backgroundImage: `url(${Medical.src})` }}
          ></div>
-         {/* Heavy White Fade to match the clean look */}
-         <div className="absolute inset-0 bg-white/90"></div>
+         {/* White Fade to match the clean look */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
         
-        {/* HEADER: "GET IN TOUCH" */}
         <div className="text-center mb-16">
             <h3 className={`font-spartan text-xl md:text-2xl font-light tracking-widest text-gray-600 uppercase
-                transition-all duration-[1200ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
+                transition-all duration-[700ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
                     ${visible
                         ? "opacity-100 -translate-y-0 scale-100"
                         : "opacity-0 -translate-y-12 scale-100"
@@ -51,9 +47,8 @@ function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-12 items-center">
             
-            {/* --- LEFT COLUMN: Brand Name --- */}
             <div className="font-spartan text-center lg:text-left">
-                <h1 className={`text-6xl md:text-7xl font-bold text-[#9a4593] tracking-tight transition-all duration-[1200ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
+                <h1 className={`text-6xl md:text-7xl font-bold text-[#9a4593] tracking-tight transition-all duration-[700ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
                     ${visible
                         ? "opacity-100 translate-y-0 scale-100"
                         : "opacity-0 translate-y-12 scale-100"
@@ -62,7 +57,6 @@ function ContactSection() {
                 </h1>
             </div>
 
-            {/* --- RIGHT COLUMN: Contact Details --- */}
             <div className={`font-montserrat space-y-8 text-gray-700 transition-all duration-[1200ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
                     ${visible
                         ? "opacity-100 translate-y-0 scale-100"
@@ -70,18 +64,14 @@ function ContactSection() {
                         }`}
                         style={{ transitionDelay: `${250}ms` }}>
                 
-                {/* Row 1: Addresses */}
                 <div className="flex flex-col md:flex-row gap-6">
-                    {/* Icon */}
                     <div className="shrink-0 mt-1">
                         <svg className="w-8 h-8 text-[#9a4593]" fill="currentColor" viewBox="0 0 24 24">
                              <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
                         </svg>
                     </div>
 
-                    {/* Address Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-                        {/* Admin Office */}
                         <div>
                             <h4 className="text-lg font-bold text-gray-800 mb-1">Admin Office:</h4>
                             <p className="text-sm leading-relaxed text-gray-600">
@@ -90,7 +80,6 @@ function ContactSection() {
                             </p>
                         </div>
                         
-                        {/* Registered Office */}
                         <div>
                             <h4 className="text-lg font-bold text-gray-800 mb-1">Registered Office:</h4>
                             <p className="text-sm leading-relaxed text-gray-600">
@@ -104,7 +93,6 @@ function ContactSection() {
                 {/* Divider Line */}
                 <div className="h-px w-full bg-gray-300/50"></div>
 
-                {/* Row 2: Email */}
                 <div className="flex items-center gap-6">
                      <div className="shrink-0">
                         <svg className="w-8 h-8 text-[#9a4593]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,7 +104,6 @@ function ContactSection() {
                      </a>
                 </div>
 
-                {/* Row 3: Phone */}
                 <div className="flex items-start gap-6">
                      <div className="shrink-0 mt-1">
                         <svg className="w-8 h-8 text-[#9a4593]" fill="currentColor" viewBox="0 0 24 24">
