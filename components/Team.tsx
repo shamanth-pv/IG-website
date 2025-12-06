@@ -2,14 +2,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import pulseImg from '@/src/assets/images/pulseImage.png'
-import LinkedIn from '@/src/assets/linkedIn.svg'
+import LinkedIn from '@/src/assets/LinkedInlogo.svg'
 // --- IMAGE IMPORTS (Based on your snippet) ---
-import doctorImg from '../src/assets/doctor-shows-interaction-patient-mechanism-blurred-background-222802318.webp';
-import profile1 from '@/src/assets/assets/Profile Pictures/RanjithK.webp'
-import profile2 from '@/src/assets/assets/Profile Pictures/SitharamanS.webp'
-import profile3 from '@/src/assets/assets/Profile Pictures/SureshKumar.webp'
+// import doctorImg from '../src/assets/doctor-shows-interaction-patient-mechanism-blurred-background-222802318.webp';
+import profile1 from '@/src/assets/Profile Pictures/RanjithK.webp'
+import profile2 from '@/src/assets/Profile Pictures/SitharamanS.webp'
+import profile3 from '@/src/assets/Profile Pictures/SureshKumar.webp'
 // Placeholders
-const waveDecorationImg = doctorImg;
+// const waveDecorationImg = doctorImg;
 
 function LeadershipSection() {
   const [isVisible, setIsVisible] = useState(false);

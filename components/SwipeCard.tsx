@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import Hexagon from '@/src/assets/hex.svg'
-
+import Hexagon from '@/src/assets/Design Elements/HexPurple.svg'
+import Landing1 from '@/src/assets/BG Images/Landing2.webp'
+import Landing3 from '@/src/assets/BG Images/Landing3.webp'
 // ---------------------------------------------------------
 // 1. IMAGE IMPORTS
 // ---------------------------------------------------------
@@ -12,13 +13,14 @@ const landingVideo = "/videos/Landing1.mp4"
 // ---------------------------------------------------------
 // 2. SLIDE DATA
 // ---------------------------------------------------------
+// Image or different image and video in different cards <- Not used
 export const slides = [
   {
     id: 1,
     title: "Innovative Arterial Blood Gas Sampler",
     linkText: "Learn more about IG Artery",
     link: "/products?category=Pre-Analytics",
-    image: doctorImg,
+    image: Landing1,
     video: "/videos/Landing1.mp4", 
     navColor: "text-black" 
   },
@@ -36,7 +38,7 @@ export const slides = [
     title: "Trusted Diagnostics Meet Clinical Needs",
     linkText: "Explore our product range",
     link: "/products",
-    image: doctorImg, 
+    image: Landing3, 
     navColor: "text-black"
   }
 ];

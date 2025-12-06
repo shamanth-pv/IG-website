@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation'; // 1. Import hook
 import TODO from '@/src/assets/images/medical.png'
-import Products_png from '@/src/assets/assets/Products';
+import Products_png from '@/src/assets/Products';
 // Placeholder Images (Replace with your actual product imports)
 const productImg = TODO;
 

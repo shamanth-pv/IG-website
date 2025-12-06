@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "@/src/assets/logo.svg";
+import Logo from "@/src/assets/IGlogo.svg";
 
 function Navbar({ textColor = "text-black" , isHome = 0}) {
   const [isScrolled, setIsScrolled] = useState(false);

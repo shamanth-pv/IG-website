@@ -1,13 +1,13 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import doctorImg from '../src/assets/doctor-shows-interaction-patient-mechanism-blurred-background-222802318.webp';
+// import doctorImg from '../src/assets/doctor-shows-interaction-patient-mechanism-blurred-background-222802318.webp';
 import PageBanner from './PageBanner';
-import Hexagon from '@/src/assets/hex.svg'
-import AboutHeader from '../src/assets/assets/BG Images/AboutUsHeader.webp'
-import AboutBody from '../src/assets/assets/BG Images/AboutUsBody.webp'
+import Hexagon from '@/src/assets/Design Elements/HexPurple.svg'
+import AboutHeader from '../src/assets/BG Images/AboutUsHeader.webp'
+import AboutBody from '../src/assets/BG Images/AboutUsBody.webp'
 // Placeholder image URL. Replace with your local import if needed.
-const doctorImgUrl = doctorImg;
+// const doctorImgUrl = doctorImg;
 
 function About() {
   const purpleColor = "#9a4593"; 

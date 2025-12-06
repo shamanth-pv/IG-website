@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import hands from '@/src/assets/images/hands.png'
+import hands from '@/src/assets/BG Images/OurServices.png'
 // Placeholder background image (Doctors stacking hands or similar team image)
 // const bgImage = "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070&auto=format&fit=crop";
 

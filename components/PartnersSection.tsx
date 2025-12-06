@@ -2,8 +2,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import TODO from '@/src/assets/images/medical.png'
-import HexagonPurple from '@/src/assets/hex.svg'
-import HexagonBlue from '@/src/assets/hexBlue.svg'
+import HexagonPurple from '@/src/assets/Design Elements/HexPurple.svg'
+import HexagonBlue from '@/src/assets/Design Elements/HexBlue.svg'
 
 // Placeholder Logo URL
 const logoPlaceholder = TODO;

@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react";
-import Medical from '@/src/assets/images/medical.png'
+import Medical from '@/src/assets/BG Images/AboutUsBody.webp'
 // Placeholder background image (Doctor writing on clipboard)
 
 function ContactSection() {
