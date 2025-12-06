@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import Products_png from '@/assets/Products';
 
-// ... (Your allProducts array and categories array remain exactly the same) ...
 const allProducts = [
   // Point of Care
   {
@@ -40,7 +39,7 @@ const allProducts = [
     name: "Mispa Revo",
     description: "Automated Cartridge Based Specific Protein Analyzer",
     image: Products_png.MispaRevo_png,
-    isNew: false, // Shows "NEW" Ribbon
+    isNew: false,
     externalLink: 'https://www.agappe.com/in/mispa-revo-immunofluorescence-analyzer.html',
   },
   {
@@ -168,7 +167,7 @@ function ProductsSection() {
             <button
               key={cat}
               onClick={() => setActiveTab(cat)}
-              className={`text-sm md:text-lg font-medium pb-3 md:pb-4 transition-all duration-300 relative whitespace-nowrap
+              className={`cursor-pointer text-sm md:text-lg font-medium pb-3 md:pb-4 transition-all duration-300 relative whitespace-nowrap
                 ${activeTab === cat ? "text-[#9a4593]" : "text-gray-500 hover:text-[#9a4593]"}
               `}
             >
@@ -196,7 +195,6 @@ function ProductsSection() {
             >
               
               {/* IMAGE AREA */}
-              {/* Mobile: h-56 | Desktop: h-64 */}
               <div className="relative h-56 md:h-64 w-full p-4 flex items-center justify-center bg-white">
                 <div className="relative w-full h-full">
                     <Image 
@@ -217,8 +215,7 @@ function ProductsSection() {
                     {product.description}
                 </p>
 
-                {/* MOBILE ONLY: Visible 'Learn More' Button 
-                    (Since hover doesn't work well on phones, we show this link explicitly) */}
+    
                 <div className="md:hidden block">
                    <a 
                      href={product.externalLink} 
@@ -230,8 +227,7 @@ function ProductsSection() {
                 </div>
               </div>
 
-              {/* DESKTOP ONLY: Hover Overlay */}
-              {/* Added 'hidden md:flex' to hide this entire overlay on mobile */}
+
               <div className="hidden md:flex absolute inset-0 bg-[#9a4593]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-col items-center justify-center text-white p-6 text-center">
                 <h3 className="text-2xl font-bold mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                     {product.name}

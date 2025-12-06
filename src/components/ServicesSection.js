@@ -40,7 +40,6 @@ function ServicesSection() {
         <section
             ref={sectionRef}
             id="services"
-            // Mobile: py-12, min-h-auto | Desktop: py-20, min-h-screen
             className="relative w-full min-h-[auto] md:min-h-screen flex flex-col items-center justify-center py-12 md:py-20 overflow-hidden"
         >
             {/* BACKGROUND */}
@@ -56,22 +55,18 @@ function ServicesSection() {
             <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
                 
                 {/* HEADER */}
-                {/* Mobile: mb-10 | Desktop: mb-16 */}
                 <div className="mb-10 md:mb-16">
-                    {/* Mobile: text-3xl | Desktop: text-5xl */}
                     <h2 className="font-spartan text-3xl md:text-5xl font-bold text-[#206bc4] mb-4">
                         OUR SERVICES
                     </h2>
                     <div className="h-1 w-24 bg-[#206bc4] mx-auto rounded-full mb-6 md:mb-8"></div>
 
-                    {/* Mobile: text-base | Desktop: text-lg */}
                     <p className="font-montserrat max-w-4xl mx-auto text-gray-600 text-base md:text-lg leading-relaxed">
                         At Inspire Gene, service excellence isn’t just a goal, it’s embedded in our DNA. We are committed to delivering not only high-quality products but also unmatched support, ensuring that every interaction reflects our dedication to reliability, responsiveness, and the highest standards of care.
                     </p>
                 </div>
 
                 {/* CARDS GRID */}
-                {/* Mobile: gap-6 | Desktop: gap-8 */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     {services.map((service, index) => (
                         <div
@@ -92,12 +87,10 @@ function ServicesSection() {
                             `}
                             style={{ transitionDelay: `${500 + index * 250}ms` }}
                         >
-                            {/* Mobile: text-xl | Desktop: text-2xl */}
                             <h3 className="font-spartan text-xl md:text-2xl font-bold text-[#1e3a8a] mb-3 md:mb-4">
                                 {service.title}
                             </h3>
                             
-                            {/* Divider Line inside card */}
                             <div className="h-0.5 w-16 bg-[#206bc4] mb-4 md:mb-6 transition-all duration-300 group-hover:w-24"></div>
 
                             <p className="font-montserrat text-gray-700 text-sm md:text-base font-medium leading-relaxed">

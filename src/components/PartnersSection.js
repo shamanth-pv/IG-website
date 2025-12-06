@@ -92,7 +92,6 @@ function PartnersSection() {
                     {associations.map((partner, index) => (
                         <div 
                             key={index}
-                            // Mobile: w-28 h-32 | Desktop: w-40 h-48 | Hover only on md
                             className="relative w-28 h-32 md:w-40 md:h-48 flex items-center justify-center transition-all duration-300 ease-out md:hover:scale-110 md:hover:drop-shadow-xl md:hover:z-10"
                         >
                             <div className="relative w-full h-full">
@@ -143,7 +142,6 @@ function PartnersSection() {
                     {clientele.map((client, index) => (
                         <div 
                             key={index}
-                            // Mobile: w-24 h-28 | Desktop: w-32 h-40 | Hover only on md
                             className="relative w-24 h-28 md:w-32 md:h-40 flex items-center justify-center transition-all duration-300 ease-out md:hover:scale-110 md:hover:drop-shadow-xl md:hover:z-10"
                         >
                             <div className="relative w-full h-full">

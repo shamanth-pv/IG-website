@@ -35,14 +35,12 @@ function LeadershipSection() {
     }
   ];
 
-  // --- INTERSECTION OBSERVER LOGIC ---
+  // INTERSECTION OBSERVER LOGIC
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Trigger animation when 10% of the section is visible
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Optional: Stop observing once triggered (so it doesn't replay when scrolling up)
           observer.unobserve(entry.target);
         }
       },

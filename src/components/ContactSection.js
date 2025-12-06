@@ -29,7 +29,6 @@ function ContactSection() {
             className="w-full h-full bg-cover bg-center bg-no-repeat grayscale opacity-100"
             style={{ backgroundImage: `url(${Medical.src})` }}
          ></div>
-         {/* White Fade to match the clean look */}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
