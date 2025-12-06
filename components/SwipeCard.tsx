@@ -21,7 +21,6 @@ export const slides = [
     linkText: "Learn more about IG Artery",
     link: "/products?category=Pre-Analytics",
     image: Landing1,
-    // video: "/videos/Landing1.mp4", 
     navColor: "text-black" 
   },
   {
