@@ -21,7 +21,7 @@ export const slides = [
     linkText: "Learn more about IG Artery",
     link: "/products?category=Pre-Analytics",
     image: Landing1,
-    video: "/videos/Landing1.mp4", 
+    // video: "/videos/Landing1.mp4", 
     navColor: "text-black" 
   },
   {
@@ -30,7 +30,7 @@ export const slides = [
     linkText: "Explore our POC solutions",
     link: "/products?category=Point+of+Care",
     image: labImg, 
-    video: "/videos/pulse.mp4",
+    video: "/videos/Landing1.mp4",
     navColor: "text-black"
   },
   {
@@ -46,7 +46,7 @@ export const slides = [
 // ---------------------------------------------------------
 // SLOW MOTION VIDEO
 // ---------------------------------------------------------
-const SlowMotionVideo = ({ src }) => {
+const SlowMotionVideo = ({ src, isActive }) => {
   const videoRef = useRef(null);
   const intervalRef = useRef(null);
 
@@ -54,41 +54,41 @@ const SlowMotionVideo = ({ src }) => {
     const video = videoRef.current;
     if (!video) return;
 
-
+    if (isActive) {
       video.currentTime = 0;
       video.playbackRate = 1.0;
       video.play().catch((e) => console.log("Auto-play blocked:", e));
 
-      // const checkTime = () => {
-      //   if (video.currentTime >= video.duration / 2) {
-      //     if (video.playbackRate >= 1.0) triggerBrake();
-      //   }
-      // };
+      const checkTime = () => {
+        if (video.currentTime >= video.duration / 2) {
+          if (video.playbackRate >= 1.0) triggerBrake();
+        }
+      };
 
-      // const triggerBrake = () => {
-      //   if (intervalRef.current) clearInterval(intervalRef.current);
-      //   intervalRef.current = setInterval(() => {
-      //     if (video.playbackRate > 0.1) video.playbackRate -= 0.1;
-      //     else {
-      //       video.pause();
-      //       clearInterval(intervalRef.current);
-      //     }
-      //   }, 50);
-      // };
+      const triggerBrake = () => {
+        if (intervalRef.current) clearInterval(intervalRef.current);
+        intervalRef.current = setInterval(() => {
+          if (video.playbackRate > 0.1) video.playbackRate -= 0.1;
+          else {
+            video.pause();
+            clearInterval(intervalRef.current);
+          }
+        }, 50);
+      };
 
-      // video.addEventListener('timeupdate', checkTime);
+      video.addEventListener('timeupdate', checkTime);
 
       return () => {
-        // video.removeEventListener('timeupdate', checkTime);
+        video.removeEventListener('timeupdate', checkTime);
         if (intervalRef.current) clearInterval(intervalRef.current);
       };
-    // } else {
-    //   video.pause();
-    //   video.currentTime = 0;
-    //   video.playbackRate = 1.0;
-    // }
+    } else {
+      video.pause();
+      video.currentTime = 0;
+      video.playbackRate = 1.0;
+    }
   }, 
-  // [isActive]
+  [isActive]
   );
 
   return (
@@ -133,7 +133,7 @@ function SwipeCard({ current, setCurrent }) {
 
             {/* RIGHT SIDE IMAGE/VIDEO */}
             <div className="absolute top-0 right-0 w-full h-full">
-              {/* {slide.video ? (
+              {slide.video ? (
                 <SlowMotionVideo src={slide.video} isActive={isActive} />
               ) : (
                 <Image 
@@ -143,7 +143,7 @@ function SwipeCard({ current, setCurrent }) {
                   className="object-cover object-center"
                   priority={index === 0}
                 />
-              )} */}
+              )}
               <SlowMotionVideo src={landingVideo} isActive={1} />
             </div>
 
