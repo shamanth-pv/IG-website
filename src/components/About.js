@@ -28,11 +28,17 @@ function About() {
   return (
     <>
     <PageBanner title="ABOUT US" image={AboutHeader} />
-    <section ref={sectionRef} id="about" className="w-full bg-white overflow-hidden relative flex flex-col md:flex-row py-12 md:py-24">
+    
+    <section 
+      ref={sectionRef} 
+      id="about" 
+      className="w-full bg-white overflow-hidden relative flex flex-col md:flex-row py-12 md:py-24"
+    >
       {/* LEFT COLUMN: Text Content */}
-      <div className="w-full md:w-1/2 flex flex-col justify-start px-8 md:px-16 lg:px-24 relative z-10 order-2 md:order-1">
+      <div className="w-full md:w-1/2 flex flex-col justify-start px-6 md:px-16 lg:px-24 relative z-10 order-2 md:order-1">
         
         {/* Top Left Circles */}
+        {/* Mobile: Slightly smaller opacity or position adjustments if needed, but safe as is due to overflow-hidden */}
         <div className="absolute -left-24 -top-24 w-80 h-80 opacity-[0.08] pointer-events-none">
             <svg viewBox="0 0 100 100" fill="none" stroke={purpleColor} strokeWidth="0.5">
                 <circle cx="50" cy="50" r="45" />
@@ -49,9 +55,14 @@ function About() {
                         ? "opacity-100 translate-y-0 scale-100"
                         : "opacity-0 translate-y-12 scale-100"
                         }`}>
-            <div className="font-montserrat space-y-8 text-xl text-justify leading-relaxed text-gray-600">
+            {/* Typography & Spacing Updates:
+               1. text-base (mobile) -> text-xl (desktop)
+               2. space-y-6 (mobile) -> space-y-8 (desktop)
+               3. text-justify is kept, but hyphenation is often safer on mobile if needed.
+            */}
+            <div className="font-montserrat space-y-6 md:space-y-8 text-base md:text-xl text-justify leading-relaxed text-gray-600">
                 <p>
-                    Inspire Gene delivers high quality  <span className="font-semibold text-[#9a4593]">Point of Care diagnostics, specialty neuro markers, high quality QC solutions</span> and <span className="font-semibold text-[#9a4593]">medical devices</span> to hospitals, clinics, ICUs and veterinary care facilities. Our strong relationships with healthcare professionals help us understand real world needs and provide tailored, high value solutions that support better clinical outcomes.
+                    Inspire Gene delivers high quality <span className="font-semibold text-[#9a4593]">Point of Care diagnostics, specialty neuro markers, high quality QC solutions</span> and <span className="font-semibold text-[#9a4593]">medical devices</span> to hospitals, clinics, ICUs and veterinary care facilities. Our strong relationships with healthcare professionals help us understand real world needs and provide tailored, high value solutions that support better clinical outcomes.
                 </p>
                 <p>
                     We work closely with leading manufacturers to offer a complete product range and stay ahead of evolving market demand. With a focus on exceptional customer experience, we ensure optimal equipment performance through our dedicated technical support and service team.
@@ -61,7 +72,7 @@ function About() {
       </div>
 
       {/* RIGHT COLUMN: Image */}
-      <div className={`w-full md:w-1/2 relative flex items-center justify-end order-1 md:order-2 pb-10 md:pb-0
+      <div className={`w-full md:w-1/2 relative flex items-center justify-end order-1 md:order-2 pb-8 md:pb-0
                     transition-all duration-[300ms] ease-[cubic-bezier(.22,.68,.32,1.01)]
                     ${visible
                         ? "opacity-100 translate-y-0 scale-100"
@@ -70,17 +81,19 @@ function About() {
                         style={{ transitionDelay: `${120}ms` }}>
         
         {/* The Image Container */}
-        <div className="relative w-full h-[400px] md:h-[400px] md:w-[90%] z-20">
+        {/* Mobile: h-[300px] to save space. Desktop: h-[400px] kept constant. */}
+        <div className="relative w-full h-[300px] md:h-[400px] md:w-[90%] z-20">
            <Image 
               src={AboutBody} 
               alt="Doctor writing on a clipboard" 
               fill
-              className="object-cover object-center md:rounded-l-[1rem] shadow-2xl"
+              // Mobile: No rounding (full width). Desktop: Rounded Left.
+              className="object-cover object-center md:rounded-l-[1rem] shadow-lg md:shadow-2xl"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
         </div>
 
-        {/* Bottom Right Hexagons */}
+        {/* Bottom Right Hexagons (Hidden on Mobile as requested in previous logic) */}
         <div className="absolute -bottom-20 -right-20 w-80 h-80 opacity-[0.08] z-10 pointer-events-none hidden md:block">
             <svg viewBox="0 0 100 100" fill="none" stroke={purpleColor} strokeWidth="0.5">
                 <path d="M50 0 L93.3 25 L93.3 75 L50 100 L6.7 75 L6.7 25 Z" />
